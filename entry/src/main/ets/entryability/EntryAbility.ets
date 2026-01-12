@@ -5,7 +5,7 @@ import RdbService from '../utils/RdbService';
 
 const DOMAIN = 0x0000;
 
-export let globalAbilityContext: common.UIAbilityContext | null = null;
+let globalAbilityContext: common.UIAbilityContext | null = null;
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {

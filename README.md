@@ -9,10 +9,10 @@ user’s weight trends over time.
 # Preview
 
 <div>
-    <img src="screenshots/ss.gif" width="24%" />
-    <img src="screenshots/ss1.png" width="24%" />
-    <img src="screenshots/ss2.png" width="24%" />
-    <img src="screenshots/ss3.png" width="24%" />
+<img src="screenshots/ss.gif" width="24%" />
+<img src="screenshots/ss1.png" width="24%" />
+<img src="screenshots/ss2.png" width="24%" />
+<img src="screenshots/ss3.png" width="24%" />
 </div>
 
 # Use Cases

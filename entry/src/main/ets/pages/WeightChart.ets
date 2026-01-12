@@ -17,7 +17,7 @@ struct WeightChart {
         color: '#333',
         fontWeight: '500',
         fontSize: 40
-      },
+      }
     },
     yAxis: {
       axisLabel: {

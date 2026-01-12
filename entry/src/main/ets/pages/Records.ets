@@ -53,7 +53,7 @@ struct Records {
           duration: 1000,
           curve: Curve.Smooth,
           iterations: 1,
-          playMode: PlayMode.Normal,
+          playMode: PlayMode.Normal
         }, async () => {
           await RdbService.deleteDataById(item.ID);
           let index = this.records.indexOf(item)

@@ -14,11 +14,11 @@ export class WindowUtil {
   public static requestFullScreen(windowStage: window.WindowStage, context: Context): void {
     windowStage.getMainWindow((err: BusinessError, data: window.Window) => {
       if (err.code) {
-        Logger.error(TAG, 'Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+        Logger.error(TAG, `Failed to obtain the main window. Cause: ${JSON.stringify(err)}`);
         return;
       }
       let windowClass: window.Window = data;
-      Logger.info(TAG, 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+      Logger.info(TAG, `Succeeded in obtaining the main window. Data: ${JSON.stringify(data)}`);
 
       // Realize the immersive effect
       let isLayoutFullScreen = true;
@@ -37,7 +37,7 @@ export class WindowUtil {
           promise.then(() => {
             Logger.info(TAG, 'Succeeded in setting the window layout to full-screen mode.');
           }).catch((err: BusinessError) => {
-            Logger.error(TAG, 'Failed to set the window layout to full-screen mode. Cause:' + JSON.stringify(err));
+            Logger.error(TAG, `Failed to set the window layout to full-screen mode. Cause: ${JSON.stringify(err)}`);
           });
         }
       } catch {

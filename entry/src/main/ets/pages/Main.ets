@@ -14,7 +14,7 @@ let onConnectionChange: (val: boolean) => void;
 let startBlinking: (val: boolean) => void;
 const MAX_WEIGHT: number = 150;
 
-function ConnectStateChanged(state: ble.BLEConnectionChangeState) {
+function connectStateChanged(state: ble.BLEConnectionChangeState) {
   if (state.state === constant.ProfileConnectionState.STATE_CONNECTED) {
     onConnectionChange(true)
     device.getServices(getServices);
@@ -22,7 +22,7 @@ function ConnectStateChanged(state: ble.BLEConnectionChangeState) {
 }
 
 let getServices = (code: BusinessError, gattServices: Array<ble.GattService>) => {
-  if (code && code.code != 0) {
+  if (code && code.code !== 0) {
     return;
   }
   services = gattServices;
@@ -54,7 +54,7 @@ function parseWeight(data: Uint8Array): string {
   return weight.toFixed(2)
 }
 
-function CharacteristicChange(characteristicChangeReq: ble.BLECharacteristic) {
+function characteristicChange(characteristicChangeReq: ble.BLECharacteristic) {
   let value: Uint8Array = new Uint8Array(characteristicChangeReq.characteristicValue);
   currentValue = parseWeight(value);
 }
@@ -71,8 +71,8 @@ async function onReceiveEvent(data: Array<ble.ScanResult>) {
 
     try {
       device = ble.createGattClientDevice(deviceId)
-      device.on('BLEConnectionStateChange', ConnectStateChanged);
-      device.on('BLECharacteristicChange', CharacteristicChange);
+      device.on('BLEConnectionStateChange', connectStateChanged);
+      device.on('BLECharacteristicChange', characteristicChange);
       device.connect();
     } catch (err) {
      }
@@ -164,8 +164,6 @@ struct Main {
         .visibility(this.isConnected ? Visibility.None : Visibility.Visible)
       Text('Connecting')
         .onClick(async () => {
-          await RdbService.insertWeightData(Math.random() * 150 + 1);
-          const record = await RdbService.getLimitedRecord();
           this.pageStack.pushPath({
             name: 'Records'
           })

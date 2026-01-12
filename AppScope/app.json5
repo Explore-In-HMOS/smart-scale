@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.hmosdemos.smartscale",
+    "bundleName": "com.hmosdemos.wearable.smart_scale",
     "vendor": "hmosdemos",
     "versionCode": 1000000,
     "versionName": "1.0.0",
