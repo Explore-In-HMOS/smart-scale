@@ -2,7 +2,7 @@
 
 # Smart Scale – HarmonyOS Wearable App
 
-A lightweight and smart body-weight tracking application designed for HarmonyOS Next wearable devices.
+A lightweight and smart body-weight tracking application designed for HarmonyOS wearable devices.
 The app reads weight data from Mi Scale 2 via Bluetooth, stores measurements in a local database, and visualizes the
 user’s weight trends over time.
 
